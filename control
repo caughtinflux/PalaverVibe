@@ -1,0 +1,9 @@
+Package: com.flux.palavervibe
+Name: PalaverVibe
+Depends: mobilesubstrate
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Have Palaver vibrate when highlights come in. Not everyone locks their phone everytime they look away.
+Maintainer: flux
+Author: flux
+Section: Tweaks
