@@ -3,9 +3,10 @@
 
 @interface IRCQuery : NSObject
 {
-    NSUInteger _unreadMentions;
+	NSString   *_name;
+    NSUInteger  _unreadMentions;
 }
-@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *name; // @synthesize name=_name;
 @property (assign) NSUInteger unreadMentions; // @synthesize unreadMentions=_unreadMentions;
 @end
 
@@ -16,7 +17,9 @@ static NSUInteger prevCount;
 {
 	%orig(mentions);
 	if (mentions > prevCount) {
+#ifdef DEBUG		
 		NSLog(@"Previous count: %i mentions: %i for channel %@", prevCount, mentions, self.name);
+#endif	
 		AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 	}
 	prevCount = mentions;
